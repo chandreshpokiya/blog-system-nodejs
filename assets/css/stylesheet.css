@@ -8,13 +8,28 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+img {
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
 p,
 label {
   color: #64718a;
+  margin-bottom: 10px;
 }
 
 h2 {
   color: var(--primary);
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  color: #fff !important;
 }
 
 .create-blog-title {
@@ -30,4 +45,46 @@ h2 {
 
 .form-control {
   border: 2px solid var(--primary);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #753aff, var(--primary));
+  border: none;
+}
+
+.blog-card-in {
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.blog-posts-block a:hover .blog-card-in {
+  background-color: #64718a30;
+}
+
+.blog-img {
+  border-radius: 12px;
+}
+
+.blog-posts-block a:hover img {
+  transform: scale(1.05);
+}
+
+.blog-title h3 {
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+  padding: 16px 0;
+}
+
+.blog-type {
+  background-color: #64718a;
+  border-radius: 4px;
+  padding: 4px 12px;
+  display: inline-block;
+}
+
+.blog-type p {
+  color: #fff;
+  margin: 0;
+  font-size: 14px;
 }

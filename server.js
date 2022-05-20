@@ -5,9 +5,12 @@ const app = express();
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+
 app.use(express.urlencoded());
 
-app.use('/static',express.static("assets"));
+const db = require('./config/mongoose')
+
+app.use('/static', express.static("assets"));
 
 app.use("/", require("./routes/index"));
 

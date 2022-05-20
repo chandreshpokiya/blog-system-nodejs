@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>All Blog</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS v5.0.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/css/stylesheet.css">
+</head>
+
+<body>
+    <div class="all-blog-page-title py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                    <h2>All Blog Post</h2>
+                    <p>This month will bring about the 88th Academy Awards. Starting in 1928, this prestigious award
+                        ceremony...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blog-posts-block">
+        <div class="container">
+            <div class="row">
+                <% for(var key of blogrecord) { %>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-12 blog-card">
+                        <a href="#">
+                            <div class="blog-card-in">
+                                <div class="blog-img overflow-hidden">
+                                    <img src="/static/images/blog-dummy-img.jpg" alt="">
+                                </div>
+                                <div class="blog-title">
+                                    <h3>
+                                        <%= key.blogtitle %>
+                                    </h3>
+                                </div>
+                                <div class="blog-date">
+                                    <p>
+                                        <%= key.blogdate %>
+                                    </p>
+                                </div>
+                                <div class="blog-desc">
+                                    <p>Lorem ipsum dolor sit amet consectetur...</p>
+                                </div>
+                                <div class="blog-type">
+                                    <p>
+                                        <%= key.blogtype %>
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <% } %>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+        integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

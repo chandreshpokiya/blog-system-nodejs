@@ -30,11 +30,18 @@
                 <form action="/insertBlog" method="post">
                     <div class="mb-3">
                         <label class="form-label">Blog Title</label>
-                        <input type="text" name="blog-title" class="form-control" placeholder="Title">
+                        <input type="text" name="blogtitle" class="form-control" placeholder="Title">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <label class="form-label">Content Area</label>
+                        <textarea class="form-control" name="blogcontent" rows="15" placeholder="Write your content here..."></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">Blog Type</label>
+                        <input type="text" name="blogtype" class="form-control" placeholder="Blog type">
+                    </div> 
+                    <div class="mb-3"> 
+                        <button type="submit" class="btn btn-primary">Publish</button>
                     </div>
                 </form>
             </div>
