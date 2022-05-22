@@ -9,12 +9,21 @@ const blogSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  blogdesc: {
+    type: String,
+    required: true,
+  },
+  writername: {
+    type: String,
+    required: true,
+  },
   blogtype: {
     type: String,
     required: true,
   },
   blogdate: {
     type: String,
+    required: true,
   },
 });
 

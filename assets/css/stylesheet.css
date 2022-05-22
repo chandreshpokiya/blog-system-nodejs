@@ -52,6 +52,10 @@ a:hover {
   border: none;
 }
 
+.blog-posts-block{
+  padding: 50px 0;
+}
+
 .blog-card-in {
   border-radius: 12px;
   padding: 12px;
@@ -81,10 +85,77 @@ a:hover {
   border-radius: 4px;
   padding: 4px 12px;
   display: inline-block;
+  margin-bottom: 10px;
 }
 
 .blog-type p {
   color: #fff;
   margin: 0;
   font-size: 14px;
+}
+
+
+.plus-btn {
+  position: fixed;
+  top: 80px;
+  right: 80px;
+  border-radius: 50px;
+  text-align: center;
+  transition: all .3s ease-in-out;
+  height: 40px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plus-btn span {
+  transition: all .3s ease-in-out;
+  font-size: 0px;
+}
+
+.plus-btn:hover span {
+  padding-left: 6px;
+  font-size: 16px;
+}
+
+.back-btn {
+  right: inherit;
+  left: 50px;
+  top: 50px;
+}
+ 
+
+.single-blog-img {
+  height: 500px;
+  overflow: hidden;
+}
+.single-blog-img img{
+  object-fit: cover;
+  object-position: 0  -150px;
+}
+
+.single-blog-title {
+  margin: 0 auto;
+}
+.single-blog-title h2{
+  margin: 0 ;
+  font-size: 46px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  padding: 10px 0;
+}
+
+.single-blog-title p span{
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.single-blog-title .writername{
+  text-transform: capitalize;
+}
+
+.single-blog-content{
+  margin: 0 auto;
 }
