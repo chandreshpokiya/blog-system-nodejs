@@ -44,7 +44,8 @@
                         <a href="/singleBlog/<%= key.id %>">
                             <div class="blog-card-in">
                                 <div class="blog-img overflow-hidden">
-                                    <img src="/static/images/blog-dummy-img.jpg" alt="">
+                                    <!-- <img src="/static/images/blog-dummy-img.jpg" alt=""> -->
+                                    <img src="<%= key.blogimage %>" alt="">
                                 </div>
                                 <div class="blog-title">
                                     <h3>
@@ -60,9 +61,11 @@
                                     </p>
                                 </div>
                                 <div class="blog-desc">
-                                    <p><%= key.blogdesc %></p>
+                                    <p>
+                                        <%= key.blogdesc %>
+                                    </p>
                                 </div>
-                               
+
                                 <div class="blog-type">
                                     <p>
                                         <%= key.blogtype %>

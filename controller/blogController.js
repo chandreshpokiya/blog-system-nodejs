@@ -1,16 +1,16 @@
 const blogs = require("../models/blogSchema");
 
-module.exports.home = (req, res) => {
+module.exports.home = async (req, res) => {
   // res.render('blog');
-  blogs.find({}, (e, rec) => {
-    if (e) {
-      console.log(e);
-      return false;
-    }
+  try {
+    var rec = await blogs.find({});
     return res.render("blog", {
       blogrecord: rec,
     });
-  });
+  } catch (e) {
+    console.log(e);
+    return;
+  }
 };
 
 module.exports.createBlog = (req, res) => {
@@ -18,39 +18,50 @@ module.exports.createBlog = (req, res) => {
 };
 
 module.exports.insertBlog = (req, res) => {
-  var datestr = new Date().toString();
-  var sortDate = datestr.slice(4, 10);
-  var { blogtitle, blogcontent, blogtype, writername } = req.body;
-  var blogdesc = blogcontent.slice(0, 86) + `...`;
-  blogs.create(
-    {
-      blogtitle: blogtitle,
-      blogcontent: blogcontent,
-      blogdesc: blogdesc,
-      writername: writername,
-      blogtype: blogtype,
-      blogdate: sortDate,
-    },
-    (e, data) => {
-      if (e) {
-        console.log(e);
-        return false;
-      }
-      return res.redirect("/");
-    }
-  );
-};
+  console.log(req.file);
 
-
-module.exports.singleBlog = (req, res) => {
-  // res.render('single_blog')
-  blogs.findById(req.params.id, (e, singleRec) => {
-    if (e) {
-      console.log(e);
+  blogs.uploadedBlogImage(req, res, (err) => {
+    if (err) {
+      console.log(err);
       return false;
     }
-    return res.render('single_blog', {
-      single: singleRec
-    })
-  })
-}
+    if (req.file) {
+      var blogImageName = blogs.blogpath + "/" + req.file.filename;
+      var datestr = new Date().toString();
+      var sortDate = datestr.slice(4, 10);
+      var { blogtitle, blogcontent, blogtype, writername } = req.body;
+      var blogdesc = blogcontent.slice(0, 86) + `...`;
+      blogs.create(
+        {
+          blogimage: blogImageName,
+          blogtitle: blogtitle,
+          blogcontent: blogcontent,
+          blogdesc: blogdesc,
+          writername: writername,
+          blogtype: blogtype,
+          blogdate: sortDate,
+        },
+        (e, data) => {
+          if (e) {
+            console.log(e);
+            return false;
+          }
+          return res.redirect("/");
+        }
+      );
+    }
+  });
+};
+
+module.exports.singleBlog = async (req, res) => {
+  // res.render('single_blog')
+  try {
+    var singleRec = await blogs.findById(req.params.id);
+    return res.render("single_blog", {
+      single: singleRec,
+    });
+  } catch (e) {
+    console.log(e);
+    return;
+  }
+};

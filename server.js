@@ -8,9 +8,10 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(express.urlencoded());
 
-const db = require('./config/mongoose')
+const db = require("./config/mongoose");
 
-app.use('/static', express.static("assets"));
+app.use("/static", express.static("assets"));
+app.use("/uploads", express.static("uploads"));
 
 app.use("/", require("./routes/index"));
 

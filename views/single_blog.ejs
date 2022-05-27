@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/static/css/stylesheet.css">
 </head>
 
-<body> 
+<body>
 
 
     <a href="/" class="btn btn-primary plus-btn back-btn">
@@ -31,15 +31,26 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-12 single-blog-block-in">
                     <div class="col-lg-6 col-md-8 col-sm-12 col-12 single-blog-title py-5">
-                        <h2><%= single.blogtitle %></h2>
-                        <p class="writername"><%= single.writername %></p>
-                        <p><%= single.blogdate %> • <span><%= single.blogtype %></span></p>
+                        <h2>
+                            <%= single.blogtitle %>
+                        </h2>
+                        <p class="writername">
+                            <%= single.writername %>
+                        </p>
+                        <p>
+                            <%= single.blogdate %> • <span>
+                                    <%= single.blogtype %>
+                                </span>
+                        </p>
                     </div>
                     <div class="single-blog-img">
-                        <img src="/static/images/blog-dummy-img.jpg" alt="">
+                        <!-- <img src="/static/images/blog-dummy-img.jpg" alt=""> -->
+                        <img src="<%= single.blogimage %>" alt="">
                     </div>
                     <div class="col-lg-6 col-md-8 col-sm-12 col-12 single-blog-content py-5">
-                        <p><%= single.blogcontent %></p>
+                        <p>
+                            <%= single.blogcontent %>
+                        </p>
                     </div>
                 </div>
             </div>
